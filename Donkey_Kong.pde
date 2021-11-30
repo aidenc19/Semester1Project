@@ -1,10 +1,10 @@
 Player player;
-Floor[] floor = new Floor[6];
+Floor floor;
 
 public void setup() {
   size(800,500);
-  player = new Player(50, height - 50);
-  spawnFloor();
+  player = new Player(50, height/2);
+  floor = new Floor(30,height-30);
 }
 
 public void draw() {
@@ -12,10 +12,9 @@ public void draw() {
   player.show();
   player.canMove();
   player.move();
-  for (int i = 0; i < floor.length; i++){
-  floor[i].show();
+ floor.show();
   }
-}
+
 
 public void keyPressed() {
   if (key == 'w') {
@@ -44,11 +43,5 @@ public void keyReleased() {
   }
   if (key == 'd') {
     player.vel.x = 0;
-  }
-}
-
-private void spawnFloor() {
-  for (int i = 0; i < floor.length; i++) {
-    floor[i] = new Floor((30), (height-30));
   }
 }

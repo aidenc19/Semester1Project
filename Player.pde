@@ -26,7 +26,7 @@ public class Player {
   public boolean canMove() {
     boolean canMove;
     PVector newPos = PVector.add(pos, vel);
-    if(newPos.y < 0 || newPos.y   > 380 || newPos.x < 0 || newPos.x >780) {
+    if(newPos.y < 0 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
       canMove = false;
     }
     else {

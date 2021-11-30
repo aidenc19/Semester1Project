@@ -2,9 +2,10 @@ public class Floor{
   public PVector pos, size;
   private boolean active = true;
   
+  
   public Floor(int x, int y){
     size = new PVector(750, 25);
-    pos = new PVector(x,y);
+    pos = new PVector(30,height-30);
   }
   
   public void show() {
@@ -13,4 +14,5 @@ public class Floor{
     rotate(PI/-60.0);
     rect(0,0,size.x,size.y);
   }
+ 
 }
