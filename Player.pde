@@ -1,12 +1,13 @@
 public class Player {
   private PVector pos, vel;
   private int hp, score;
-  private final int SPEED = 5, SIZE = 20;
+  private final int SPEED = 2, SIZE = 20;
+  public boolean active = true;
   
   public Player(int x, int y) {
     hp = 100;
     score = 0;
-    pos = new PVector(x,y);
+    pos = new PVector(50,height-50);
     vel = new PVector(0,0);
   }
   
@@ -29,9 +30,17 @@ public class Player {
     if(newPos.y < 0 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
       canMove = false;
     }
+    else if (player.pos.y >= 452){
+     canMove = false; 
+    }
     else {
       canMove = true;
     }
     return canMove;
   }
+public void collide() {
+  if (player.pos.y >= 475){
+    player.active = false;
+   }
+}
 }
