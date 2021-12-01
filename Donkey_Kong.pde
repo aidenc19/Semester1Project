@@ -1,12 +1,14 @@
 Player player;
 Floor floor;
+Floor f1;
 Donkey kong;
 Barrell barrell;
 
 public void setup() {
   size(800,500);
-  player = new Player(50, height/2);
+  player = new Player(50, height-50);
   floor = new Floor(50,height-30);
+  f1 = new Floor(50,250);
   kong = new Donkey(770,600);
   barrell = new Barrell(70, 0);
 }
@@ -17,15 +19,13 @@ public void draw() {
   player.canMove();
   player.move();
  floor.show();
- floor.show2();
- floor.show3();
- floor.show4();
- floor.show5();
- floor.show6();
+ f1.show();
  kong.show();
  player.collide();
  barrell.show();
- barrell.move();
+ //barrell.move();
+ player.enemy();
+ barrell.velChange();
   }
 
 

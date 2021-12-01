@@ -30,17 +30,20 @@ public class Player {
     if(newPos.y < 0 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
       canMove = false;
     }
-    else if (player.pos.y >= 452){
-     canMove = false; 
-    }
     else {
       canMove = true;
     }
     return canMove;
   }
 public void collide() {
-  if (player.pos.y >= 475){
+  if (player.pos.y >= 451){
     player.active = false;
    }
+}
+
+public void enemy() {
+ if(player.pos.y == barrell.pos.y && player.pos.x == barrell.pos.x){
+  player.active = false; 
+ }
 }
 }

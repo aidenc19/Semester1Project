@@ -10,32 +10,7 @@ public class Floor{
   
   public void show() {
     fill(255,105,180);
-  translate(pos.x,pos.y);
-    rect(0,0,size.x,size.y);
+    rect(pos.x,pos.y,size.x,size.y);
   }
-   public void show2() {
-    fill(255,105,180);
-  translate(-pos.x,-pos.y+400);
-    rect(0,0,size.x,size.y);
-  }
- public void show3() {
-    fill(255,105,180);
-  translate(pos.x,-pos.y+390);
-    rect(0,0,size.x,size.y);
-  }
-  public void show4() {
-    fill(255,105,180);
-  translate(-pos.x,-pos.y+380);
-    rect(0,0,size.x,size.y);
-  }
-   public void show5() {
-    fill(255,105,180);
-    translate(pos.x,-pos.y+390);
-    rect(0,0,size.x,size.y);
-  }
-   public void show6() {
-    fill(255,105,180);
-    translate(-pos.x,-pos.y+390);
-    rect(0,0,size.x,size.y);
-  }
+
 }
