@@ -7,7 +7,7 @@ public class Player {
   public Player(int x, int y) {
     hp = 100;
     score = 0;
-    pos = new PVector(50,height-47);
+    pos = new PVector(x,y);
     vel = new PVector(0,0);
   }
   
@@ -30,6 +30,9 @@ public class Player {
     if(newPos.y < 0 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
       canMove = false;
     }
+   if(player.pos.x >= f1.pos.x && player.pos.y >= f1.pos.y && player.pos.y <= f1.pos.y){
+      canMove = false;
+   }
     else {
       canMove = true;
     }
@@ -39,18 +42,19 @@ public void collide() {
   if (player.pos.y >= 452){
     player.vel.y = 0;
    }
-   else if(player.pos.y >= 378 && player.pos.y <=425){
-    player.vel.y = 0; 
-   }
-   else if (player.pos.x >= 760 && player.pos.x <=800){
-     player.vel.y = player.vel.y;
-   }
    }
 
 public void enemy() {
 double dist = PVector.sub(this.pos,barrell.pos).mag();
     if (dist <= this.SIZE / 2 + barrell.SIZE / 2) {
   player.active = false; 
+  System.out.println("hit");
+    fill(255);
+ textSize(48);
+    textAlign(CENTER,CENTER);
+    text("You Died",width/2, height/2);
+    noLoop(); 
  }
 }
+
 }

@@ -20,7 +20,7 @@ public class Barrell{
   
   public void velChange(){
      if(barrell.pos.x >= 750 || barrell.pos.x <= 50){
-      barrell.pos.y = barrell.pos.y +73;
+      barrell.pos.y = barrell.pos.y +125;
      barrell.vel.x = -barrell.vel.x;
     } 
 }
