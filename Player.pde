@@ -7,7 +7,7 @@ public class Player {
   public Player(int x, int y) {
     hp = 100;
     score = 0;
-    pos = new PVector(50,height-50);
+    pos = new PVector(50,height-47);
     vel = new PVector(0,0);
   }
   
@@ -36,13 +36,20 @@ public class Player {
     return canMove;
   }
 public void collide() {
-  if (player.pos.y >= 451){
-    player.active = false;
+  if (player.pos.y >= 452){
+    player.vel.y = 0;
    }
-}
+   else if(player.pos.y >= 378 && player.pos.y <=425){
+    player.vel.y = 0; 
+   }
+   else if (player.pos.x >= 760 && player.pos.x <=800){
+     player.vel.y = player.vel.y;
+   }
+   }
 
 public void enemy() {
- if(player.pos.y == barrell.pos.y && player.pos.x == barrell.pos.x){
+double dist = PVector.sub(this.pos,barrell.pos).mag();
+    if (dist <= this.SIZE / 2 + barrell.SIZE / 2) {
   player.active = false; 
  }
 }

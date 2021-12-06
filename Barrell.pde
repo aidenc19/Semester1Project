@@ -4,7 +4,7 @@ public class Barrell{
   public boolean active = true;
   
   public Barrell(int x, int y){
-     pos = new PVector(140,40);
+     pos = new PVector(x,y);
     vel = new PVector(1.5,0);
   }
   public void show() {
@@ -13,15 +13,15 @@ public class Barrell{
   }
   
   public void move() {
-    if (barrell.pos.x >= 10) {
+    if (barrell.pos.x >= 0) {
          pos.add(vel);
     }
   }
   
   public void velChange(){
      if(barrell.pos.x >= 750 || barrell.pos.x <= 50){
-      barrell.pos.y = barrell.pos.y +85;
+      barrell.pos.y = barrell.pos.y +73;
      barrell.vel.x = -barrell.vel.x;
     } 
-  }
+}
 }

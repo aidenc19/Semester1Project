@@ -5,7 +5,7 @@ public class Floor{
   
   public Floor(int x, int y){
     size = new PVector(750, 25);
-    pos = new PVector(50,height-30);
+    pos = new PVector(x,y);
   }
   
   public void show() {
