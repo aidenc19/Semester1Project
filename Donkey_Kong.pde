@@ -3,7 +3,7 @@ Floor floor;
 Floor f1;
 Floor f2;
 Floor f3;
-
+Barrell b1;
 Donkey kong;
 Barrell barrell;
 
@@ -16,6 +16,7 @@ public void setup() {
   f3 = new Floor(0,100);
   kong = new Donkey(70,30);
   barrell = new Barrell(140, 85);
+  b1 = new Barrell(740, 205);
 
 }
 
@@ -33,8 +34,11 @@ public void draw() {
  player.collide();
  barrell.show();
  barrell.move();
+ b1.move();
+ b1.show();
  player.enemy();
  barrell.velChange();
+ b1.velChange1();
   }
 
 

@@ -39,13 +39,22 @@ public void collide() {
   if (player.pos.y >= 452){
     player.vel.y = 0;
    }
-   if(player.pos.y >=340 && player.pos.y <=360){
+   if(player.pos.y >=328 && player.pos.y <=360){
     player.vel.y = 0; 
    }
-   else if(player.pos.x >=750 && player.pos.x <= 800){
-    player.vel.y = n 
+   else if(player.pos.x >=760 && player.pos.x <= 800){
+    player.vel.y = player.vel.y-1;
    }
+   if(player.pos.y <= 350 && player.pos.y >= 328){
+    player.vel.y = 0; 
    }
+   if(player.pos.y >=205 && player.pos.y <=238){
+    player.vel.y=0; 
+   }
+   if(player.pos.x >=0 && player.pos.x <= 10){
+    player.vel.y = player.vel.y-1; 
+   }
+}
 
 public void enemy() {
 double dist = PVector.sub(this.pos,barrell.pos).mag();

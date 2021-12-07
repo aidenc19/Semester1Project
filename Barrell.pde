@@ -24,4 +24,10 @@ public class Barrell{
      barrell.vel.x = -barrell.vel.x;
     } 
 }
+ public void velChange1(){
+     if(b1.pos.x >= 750 || b1.pos.x <= 50){
+      b1.pos.y = b1.pos.y +125;
+     b1.vel.x = -b1.vel.x;
+    } 
+}
 }
