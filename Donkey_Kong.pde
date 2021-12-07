@@ -23,6 +23,7 @@ public void draw() {
   background(0);
   player.show();
   player.canMove();
+  player.canMove1();
   player.move();
  floor.show();
  f1.show();
@@ -57,6 +58,6 @@ public void keyReleased() {
     player.vel.x = 0;
   }
   if(key == 'f') {
-    player.vel.y = player.vel.y +14;
+    player.vel.y = player.vel.y+13;
   }
 }

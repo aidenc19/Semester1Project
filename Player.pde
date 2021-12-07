@@ -27,12 +27,9 @@ public class Player {
   public boolean canMove() {
     boolean canMove;
     PVector newPos = PVector.add(pos, vel);
-    if(newPos.y < 0 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
+    if(newPos.y < -21 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
       canMove = false;
     }
-   if(player.pos.x >= f1.pos.x && player.pos.y >= f1.pos.y && player.pos.y <= f1.pos.y){
-      canMove = false;
-   }
     else {
       canMove = true;
     }
@@ -41,6 +38,12 @@ public class Player {
 public void collide() {
   if (player.pos.y >= 452){
     player.vel.y = 0;
+   }
+   if(player.pos.y >=340 && player.pos.y <=360){
+    player.vel.y = 0; 
+   }
+   else if(player.pos.x >=750 && player.pos.x <= 800){
+    player.vel.y = n 
    }
    }
 
@@ -56,5 +59,19 @@ double dist = PVector.sub(this.pos,barrell.pos).mag();
     noLoop(); 
  }
 }
+
+public boolean canMove1() {
+    boolean canMove1;
+    PVector newPos = PVector.add(pos, vel);
+   if(newPos.x == f1.pos.x || newPos.y == f1.pos.y || newPos.y == f1.pos.y){
+      canMove1 = false;
+      player.active = false;
+      System.out.println("collision");
+   }
+    else {
+      canMove1 = true;
+    }
+    return canMove1;
+  }
 
 }

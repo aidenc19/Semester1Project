@@ -2,7 +2,7 @@ public class Donkey{
  private PVector pos;
  
  public Donkey(int x, int y) {
-    pos = new PVector(50,38);
+    pos = new PVector(x,y);
  }
  
  public void show() {
