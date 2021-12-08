@@ -5,34 +5,41 @@ Floor f2;
 Floor f3;
 Barrell b1;
 Donkey kong;
-Barrell barrell;
+Barrell[] barrell= new Barrell[8];
 Barrell b2;
 Barrell b3;
 Barrell b4;
 Barrell b5;
+Barrell b6;
 PImage img;
 
 public void setup() {
   size(800,500);
   //from donkey kong video game produced by Nintendo
-  img = loadImage("donkey.png");
+  img = loadImage("kong3.png");
   player = new Player(50, 455);
   floor = new Floor(50,475);
   f1 = new Floor(0,350);
   f2 = new Floor(50,225);
   f3 = new Floor(0,100);
   kong = new Donkey(70,30);
-  barrell = new Barrell(140, 85);
   b1 = new Barrell(740, 210);
   b2 = new Barrell(51, 335);
   b3 = new Barrell(740, 335);
    b4 = new Barrell(740, 85);
     b5 = new Barrell(740, 460);
+b6 = new Barrell(51, 210);
+spawnEnemies();
 }
 
 public void draw() {
   background(0);
-  image(img,-20,-20);
+  for(int i = 0; i < barrell.length; i++) {
+    barrell[i].show();
+    barrell[i].move();
+    barrell[i].velChange();
+    player.enemy(barrell[i]);
+  }
   player.show();
   player.canMove();
   player.enemy2();
@@ -44,12 +51,9 @@ public void draw() {
  f3.show();
  kong.show();
  player.collide();
- barrell.show();
- barrell.move();
  b1.move();
  b1.show();
- player.enemy();
- barrell.velChange();
+ 
  b1.velChange1();
  player.enemy1();
  b2.show();
@@ -68,6 +72,11 @@ public void draw() {
  player.enemy3();
  player.enemy4();
  player.enemy5();
+ b6.move();
+ b6.show();
+ b6.velChange6();
+ player.enemy6();
+ image(img,-20,-50);
   }
 
 
@@ -92,5 +101,15 @@ public void keyReleased() {
   }
   if(key == 'f') {
     player.vel.y = player.vel.y+13;
+  }
+}
+
+private void spawnEnemies() {
+  int b = 0;
+  for (int i = 0; i < barrell.length/2; i++) {
+    barrell[b] = new Barrell((int)(Math.random()*800),(int)(60*i));
+    b += 1;
+    barrell[b] = new Barrell((int)(Math.random()*800),(int)(60*i));
+    b += 1;
   }
 }

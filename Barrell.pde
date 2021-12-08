@@ -13,16 +13,15 @@ public class Barrell{
   }
   
   public void move() {
-    if (barrell.pos.x >= 0) {
          pos.add(vel);
     }
-  }
   
   public void velChange(){
-     if(barrell.pos.x >= 750 || barrell.pos.x <= 50){
-     barrell.vel.x = -barrell.vel.x;
+     if(pos.x >= 750 || pos.x <= 50){
+    vel.x = -vel.x;
     } 
 }
+
  public void velChange1(){
      if(b1.pos.x >= 750 || b1.pos.x <= 50){
      b1.vel.x = -b1.vel.x;
@@ -47,6 +46,11 @@ public void velChange4(){
 public void velChange5(){
      if(b5.pos.x >= 750 || b5.pos.x <= 50){
      b5.vel.x = -b5.vel.x;
+    } 
+}
+public void velChange6(){
+     if(b6.pos.x >= 750 || b6.pos.x <= 50){
+     b6.vel.x = -b6.vel.x;
     } 
 }
 }
