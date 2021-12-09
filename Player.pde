@@ -103,30 +103,7 @@ public boolean canMove1() {
     }
     return canMove1;
   }
- public void enemy1() {
-double dist = PVector.sub(this.pos,b1.pos).mag();
-    if (dist <= this.SIZE / 2 + b1.SIZE / 2) {
-  player.active = false; 
-  System.out.println("hit");
-    fill(255);
- textSize(48);
-    textAlign(CENTER,CENTER);
-    text("You Died",width/2, height/2);
-    noLoop(); 
- }
-}
- public void enemy2() {
-double dist = PVector.sub(this.pos,b2.pos).mag();
-    if (dist <= this.SIZE / 2 + b2.SIZE / 2) {
-  player.active = false; 
-  System.out.println("hit");
-    fill(255);
- textSize(48);
-    textAlign(CENTER,CENTER);
-    text("You Died",width/2, height/2);
-    noLoop(); 
- }
-}
+
  public void win() {
 double dist = PVector.sub(this.pos,kong.pos).mag();
     if (dist <= this.SIZE / 2 + kong.SIZE / 2) {
@@ -136,56 +113,6 @@ double dist = PVector.sub(this.pos,kong.pos).mag();
  textSize(48);
     textAlign(CENTER,CENTER);
     text("You Won",width/2, height/2);
-    noLoop(); 
- }
-}
-public void enemy3() {
-double dist = PVector.sub(this.pos,b3.pos).mag();
-    if (dist <= this.SIZE / 2 + b3.SIZE / 2) {
-  player.active = false; 
-  System.out.println("hit");
-    fill(255);
- textSize(48);
-    textAlign(CENTER,CENTER);
-    text("You Died",width/2, height/2);
-    noLoop(); 
- }
-}
-
-public void enemy4() {
-double dist = PVector.sub(this.pos,b4.pos).mag();
-    if (dist <= this.SIZE / 2 + b4.SIZE / 2) {
-  player.active = false; 
-  System.out.println("hit");
-    fill(255);
- textSize(48);
-    textAlign(CENTER,CENTER);
-    text("You Died",width/2, height/2);
-    noLoop(); 
- }
-}
-
-public void enemy5() {
-double dist = PVector.sub(this.pos,b5.pos).mag();
-    if (dist <= this.SIZE / 2 + b5.SIZE / 2) {
-  player.active = false; 
-  System.out.println("hit");
-    fill(255);
- textSize(48);
-    textAlign(CENTER,CENTER);
-    text("You Died",width/2, height/2);
-    noLoop(); 
- }
-}
-public void enemy6() {
-double dist = PVector.sub(this.pos,b6.pos).mag();
-    if (dist <= this.SIZE / 2 + b6.SIZE / 2) {
-  player.active = false; 
-  System.out.println("hit");
-    fill(255);
- textSize(48);
-    textAlign(CENTER,CENTER);
-    text("You Died",width/2, height/2);
     noLoop(); 
  }
 }
