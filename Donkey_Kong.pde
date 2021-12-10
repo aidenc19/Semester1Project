@@ -31,13 +31,13 @@ public void draw() {
   player.show();
   player.canMove();
   player.canMove1();
+  player.win();
   player.move();
  floor.show();
  f1.show();
  f2.show();
  f3.show();
  kong.show();
- player.collide();
  image(img,-20,-50);
   }
 
@@ -50,7 +50,7 @@ public void keyPressed() {
     player.vel.x = player.SPEED;
   }
   if(key == 'f') {
-    player.vel.y = player.vel.y -10;
+    player.vel.y = -8;
   }
 }
 
@@ -62,7 +62,7 @@ public void keyReleased() {
     player.vel.x = 0;
   }
   if(key == 'f') {
-    player.vel.y = player.vel.y+13;
+    player.vel.y = 9;
   }
 }
 

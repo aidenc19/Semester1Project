@@ -30,51 +30,35 @@ public class Player {
     if(newPos.y < -5 || newPos.y   > height-20 || newPos.x < 0 || newPos.x >780) {
       canMove = false;
     }
+  else if (newPos.y >= 456){
+    canMove = false;
+   }
+    else if(newPos.y >=328 && newPos.y <=360){
+    canMove = false;
+   }
+     else if(player.pos.y <= 350 && player.pos.y >= 328){
+    canMove = false;
+   }
+     else if(player.pos.y >=205 && player.pos.y <=238){
+    canMove = false;
+   }
+     else if(player.pos.y <= 211 && player.pos.y >= 210){
+    canMove = false;
+   }
+    else if(player.pos.y >=80 && player.pos.y <=115){
+    canMove = false;
+   }
+    else if(player.pos.y <= 91 && player.pos.y >= 90){
+    canMove = false;
+   }
+     else if(player.pos.y <= 350 && player.pos.y >= 328){
+   canMove = false;
+   }
     else {
       canMove = true;
     }
     return canMove;
   }
-public void collide() {
-  if (player.pos.y >= 452){
-    player.vel.y = 0;
-   }
-   if(player.pos.y >=328 && player.pos.y <=360){
-    player.vel.y = 0; 
-   }
-   else if(player.pos.x >=780 && player.pos.x <= 800){
-    player.vel.y = player.vel.y-1;
-   }
-   if(player.pos.y <= 350 && player.pos.y >= 328){
-    player.vel.y = 0; 
-   }
-   if(player.pos.y >=205 && player.pos.y <=238){
-    player.vel.y=0; 
-   }
-   if(player.pos.x >=0 && player.pos.x <= 5){
-    player.vel.y = player.vel.y-0.5; 
-   }
-    if(player.pos.y <= 211 && player.pos.y >= 210){
-    player.vel.y = 0; 
-   }
-   if(player.pos.y >=80 && player.pos.y <=115){
-    player.vel.y = 0; 
-   }
-    if(player.pos.x >=780 && player.pos.x <= 800){
-    player.vel.y = player.vel.y-0.5; 
-   }
-     if(player.pos.y <= 91 && player.pos.y >= 90){
-    player.vel.y = 0; 
-   }
-     if(player.pos.y <= 350 && player.pos.y >= 328){
-    player.vel.y = 0; 
-   }
-   else{
-    if (player.pos.y >=-5){
-     player.active = false;
-    }
-}
-}
 
 public void enemy(Barrell b) {
 double dist = PVector.sub(this.pos,b.pos).mag();
@@ -93,7 +77,7 @@ double dist = PVector.sub(this.pos,b.pos).mag();
 public boolean canMove1() {
     boolean canMove1;
     PVector newPos = PVector.add(pos, vel);
-   if(newPos.x == f1.pos.x || newPos.y == f1.pos.y || newPos.y == f1.pos.y){
+   if(newPos.x == f1.pos.x || newPos.y == f1.pos.y){
       canMove1 = false;
       player.active = false;
       System.out.println("collision");
