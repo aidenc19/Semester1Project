@@ -1,4 +1,7 @@
-//use sides of game to get to next level of floor //<>//
+//use sides of game to get to next level of floor. Sort of as a elevator //<>//
+//Floor collision is very tricky. Have to tap F a few times if you get swtuck in the floor
+//Dodge barrells rolling on each level by presssing f to jump
+//jump into donkey kong at the end to get the you win message
 Player player;
 Floor floor;
 Floor f1;

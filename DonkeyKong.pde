@@ -1,6 +1,6 @@
 public class Donkey{
  private PVector pos;
- private final int SIZE = 20;
+ private final int SIZE = 120;
  public Donkey(int x, int y) {
     pos = new PVector(x,y);
  }
